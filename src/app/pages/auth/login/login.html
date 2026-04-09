@@ -1,5 +1,6 @@
 @if(!isLoggedIn)
 {
+<p *ngIf="errorMsg" style="color: red; text-align:center">{{errorMsg}}</p>
 
 <h2 style="text-align:center; margin-bottom:20px;">Login</h2>
 
@@ -10,6 +11,8 @@
     style="width:100%; padding:8px; margin-bottom:15px; border:1px solid #ccc; border-radius:4px;" />
 
 <button (click)="handleLogin()">Login</button>
+
+
 }
 @else {
 <button (click)="handleLogout()"> Logout</button>
