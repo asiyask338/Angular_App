@@ -1,1 +1,19 @@
-<p>employee-detail works!</p>
+<h3>
+    <li> Name : {{employee().name}}</li>
+
+</h3>
+<div>
+
+    <img [src]="employee()?.photo" [alt]="employee().name">
+</div>
+
+<h5>
+    <li>Age : {{employee().age}}</li>
+    <li> Email : {{employee().email}}</li>
+    <li>Phone Number : {{employee().phoneNumber}}</li>
+    <li>Department : {{employee().deptId}}</li>
+    <li>Designation : {{employee().desgId}}</li>
+</h5>
+
+
+<router-outlet></router-outlet>

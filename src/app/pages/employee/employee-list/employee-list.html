@@ -1,0 +1,14 @@
+<h4>Employee Details</h4>
+
+<ul>
+    <li *ngFor="let employee of employees">
+
+        <div [routerLink]="['/employee/details', employee.id]"
+            style="display:flex; align-items:center; gap:10px; cursor:pointer">
+
+            <img [src]="employee.photo" style="width:40px; height:40px; border-radius:50%;">
+
+            <p>{{ employee.name }}</p>
+        </div>
+    </li>
+</ul>

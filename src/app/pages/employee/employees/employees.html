@@ -1,15 +1,16 @@
 <h1>Welcome to Employee Section</h1>
 
 <ul class="employee-menu">
-    <li>
-        <a [routerLink]="'/employee/details'">Employee Detail</a>
-    </li>
-    <li>
-        <a [routerLink]="'/employee/add'">Add Employee</a>
-    </li>
-    <li>
-        <a [routerLink]="'/employee/edit'"> Edit Employee</a>
+    <li><a [routerLink]="'/employee/add'">Add Employee</a></li>
+    <li><a [routerLink]="'/employee/edit'">Edit Employee</a></li>
+    <li><a [routerLink]="'/employee/list'" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+            Employees List
+        </a>
     </li>
 </ul>
+
+<hr>
+
+
 
 <router-outlet></router-outlet>

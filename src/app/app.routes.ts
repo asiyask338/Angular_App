@@ -11,12 +11,15 @@ import { EmployeeDetail } from './pages/employee/employee-detail/employee-detail
 import { AddEmployee } from './pages/employee/add-employee/add-employee';
 import { EditEmployee } from './pages/employee/edit-employee/edit-employee';
 import { authGuard } from './guards/auth-guard';
+import { EmployeeList } from './pages/employee/employee-list/employee-list';
+import { Layout } from './components/layout/layout';
 
 export const routes: Routes = [
  {path:'', redirectTo:'login', pathMatch:'full'},
  {path:'login', component:Login},
  {path:'signup', component:Signup},
  {path:'', 
+        component:Layout,
   canActivate:[authGuard], 
   children:[ 
         {path:'dashboard', component:Home},
@@ -25,7 +28,9 @@ export const routes: Routes = [
         {path:'blogs', component:Blogs},
         {path:'employee', component:Employees, 
             children:[
-                    {path:'details', component:EmployeeDetail},
+                    {path: '', redirectTo: 'list', pathMatch: 'full' }, 
+                    {path: 'list', component: EmployeeList },
+                    {path:'details/:id', component:EmployeeDetail},
                     {path:'add', component:AddEmployee},
                     {path:'edit', component:EditEmployee}]
                 

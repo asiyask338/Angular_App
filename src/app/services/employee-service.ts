@@ -17,7 +17,7 @@ export class EmployeeService {
 
   getEmployeeById(id:any)
   {
-    return this.http.get(`${this.empUrl}/{id}`)
+    return this.http.get(`${this.empUrl}/${id}`)
   }
 
   createEmployee(data :any)
@@ -27,11 +27,11 @@ export class EmployeeService {
 
   updateEmployee(data:any, id:any)
   {
-    return this.http.put(`${this.empUrl}/{id}`, data)
+    return this.http.put(`${this.empUrl}/${id}`, data)
   }
 
   deleteEmployee(id:any)
   {
-    return this.http.delete(`${this.empUrl}/{id}`)
+    return this.http.delete(`${this.empUrl}/${id}`)
   }
 }
